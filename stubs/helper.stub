@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Helpers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Arr;
+
+
+class DummyClass
+{
+    //example
+    public static function hi()
+    {
+        return "Hi";
+    }
+}
