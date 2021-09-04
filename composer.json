@@ -1,7 +1,7 @@
 {
     "name": "samchentw/common",
-    "version": "2.0.0",
     "type": "library",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Samchentw\\Common\\": "src/"
@@ -13,5 +13,8 @@
             "email": "penguin.bear11290330@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": "^7.4.20",
+        "laravel/framework": "6.7.*"
+    }
 }
