@@ -8,7 +8,7 @@
 ## Laravel
 After updating composer, add the ServiceProvider to the providers array in config/app.php
 ```sh
-Samchentw\Common\CommonProvider::class
+Samchentw\Common\CommonServiceProvider::class
 ```
 
 ## Feature

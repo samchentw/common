@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
 use Samchentw\Common\Console\Commands;
 
-class CommonProvider extends ServiceProvider
+class CommonServiceProvider extends ServiceProvider
 {
 
     /**
