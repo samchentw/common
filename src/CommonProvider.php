@@ -1,8 +1,7 @@
 <?php
 
-namespace Samchentw\Common\Providers;
+namespace Samchentw\Common;
 
-// use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
 use Samchentw\Common\Console\Commands;
@@ -42,7 +41,7 @@ class CommonProvider extends ServiceProvider
             'domain' => null,
             'prefix' => 'api',
         ], function () {
-            $this->loadRoutesFrom(__DIR__ . '/../../routes/command.php');
+            $this->loadRoutesFrom(__DIR__ . '/../routes/command.php');
         });
     }
 
