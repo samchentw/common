@@ -46,6 +46,24 @@ class CommonServiceProvider extends ServiceProvider
     {
         $this->configureRoutes();
         $this->configureCommands();
+        $this->configurePublishing();
+    }
+
+
+    /**
+     * Configure publishing for the package.
+     *
+     * @return void
+     */
+    protected function configurePublishing()
+    {
+        if (!$this->app->runningInConsole()) {
+            return;
+        }
+
+        $this->publishes([
+            __DIR__.'/../config/common.php' => config_path('common.php'),
+        ], 'common-config');
     }
 
     /**

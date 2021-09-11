@@ -106,12 +106,12 @@ abstract class Repository
     {
         $query = $this->getModel()->query();
 
-        if(method_exists($this->model,'scopeEnableQuery')){
+        if (method_exists($this->model, 'scopeEnableQuery')) {
             $query->enableTrueQuery();
         }
 
-        if(method_exists($this->model,'scopeSortOrderBy')){
-            $query->sortOrderBy();
+        if (method_exists($this->model, 'scopeSortByConfig')) {
+            $query->sortByConfig();
         }
 
         return $query;
@@ -121,12 +121,12 @@ abstract class Repository
     {
         $query = $this->getModel()->query();
 
-        if(method_exists($this->model,'scopeEnableQuery')){
+        if (method_exists($this->model, 'scopeEnableQuery')) {
             $query->enableTrueQuery();
         }
 
-        if(method_exists($this->model,'scopeSortOrderBy')){
-            $query->sortOrderBy();
+        if (method_exists($this->model, 'scopeSortByConfig')) {
+            $query->sortByConfig();
         }
 
         return $query->get();
@@ -136,8 +136,8 @@ abstract class Repository
     {
         $query = $this->getModel()->query();
 
-        if(method_exists($this->model,'scopeSortOrderBy')){
-            $query->sortOrderBy();
+        if (method_exists($this->model, 'scopeSortByConfig')) {
+            $query->sortByConfig();
         }
 
         return $query;
@@ -147,14 +147,10 @@ abstract class Repository
     {
         $query = $this->getModel()->query();
 
-        if(method_exists($this->model,'scopeSortOrderBy')){
-            $query->sortOrderBy();
+        if (method_exists($this->model, 'scopeSortByConfig')) {
+            $query->sortByConfig();
         }
 
         return $query->get();
     }
-
-
-    
-    
 }

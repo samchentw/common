@@ -16,6 +16,15 @@ trait HasSort
         $this->fillable[] = 'sort';
     }
 
+    public function scopeSortByConfig($query)
+    {
+        if (config('common.model_sort') == 'asc') {
+            return $query->orderBy('sort');
+        } else if (config('common.model_sort') == 'desc') {
+            return $query->orderByDesc('sort');
+        }
+    }
+
     /**
      * Scope a query to only include popular users.
      *
