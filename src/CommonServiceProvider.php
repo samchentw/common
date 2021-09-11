@@ -5,6 +5,9 @@ namespace Samchentw\Common;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
 use Samchentw\Common\Console\Commands;
+use Illuminate\Database\Schema\Blueprint;
+use Samchentw\Common\Helpers\EnableHelper;
+use Samchentw\Common\Helpers\SortHelper;
 
 class CommonServiceProvider extends ServiceProvider
 {
@@ -16,6 +19,22 @@ class CommonServiceProvider extends ServiceProvider
      */
     public function register()
     {
+
+        Blueprint::macro('setEnable', function () {
+            EnableHelper::columns($this);
+        });
+
+        Blueprint::macro('dropEnable', function () {
+            EnableHelper::dropColumns($this);
+        });
+
+        Blueprint::macro('setSort', function () {
+            SortHelper::columns($this);
+        });
+
+        Blueprint::macro('dropSort', function () {
+            SortHelper::dropColumns($this);
+        });
     }
 
     /**

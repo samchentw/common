@@ -5,7 +5,18 @@ namespace Samchentw\Common\Traits\Supports;
 
 trait HasSort
 {
-     /**
+
+    /**
+     * Initialize the trait
+     * 
+     * @return void
+     */
+    public function initializeHasSort()
+    {
+        $this->fillable[] = 'sort';
+    }
+
+    /**
      * Scope a query to only include popular users.
      *
      * @param  \Illuminate\Database\Eloquent\Builder  $query
@@ -26,5 +37,4 @@ trait HasSort
     {
         return $query->orderByDesc('sort');
     }
-
 }

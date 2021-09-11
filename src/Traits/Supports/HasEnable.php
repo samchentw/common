@@ -5,6 +5,19 @@ namespace Samchentw\Common\Traits\Supports;
 
 trait HasEnable
 {
+
+    /**
+     * Initialize the trait
+     * 
+     * @return void
+     */
+    public function initializeHasEnable()
+    {
+        $this->fillable[] = 'enable';
+        $this->casts['enable'] = 'boolean';
+    }
+
+
     /**
      * Scope a query to only include popular users.
      *
