@@ -79,6 +79,8 @@ abstract class Repository
 
     /**
      * 分頁功能
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     * @throws \InvalidArgumentException
      */
     public function page($count = 10)
     {
@@ -87,6 +89,7 @@ abstract class Repository
 
     /**
      * 取得 model 的 $fillable參數
+     * @return array
      */
     public function getFillable()
     {
@@ -95,6 +98,7 @@ abstract class Repository
 
     /**
      * 取得 model 實例化查詢
+     * @return \Illuminate\Database\Eloquent\Builder
      */
     public function getQuery()
     {
