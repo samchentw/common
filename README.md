@@ -146,7 +146,7 @@ In Controller
         //for Front
         public function example1()
         {
-            // get enable false data And sorted
+            // get enable true data And sorted
             return $this->articleRepository->getAllForFront(); 
         }
 
@@ -154,14 +154,14 @@ In Controller
         public function example2()
         {
             $query = $this->articleRepository->getAllForFrontQuery();
-            // get enable false data And sorted
+            // get enable true data And sorted
             return $query->where('title','=','test')->get(); 
         }
         
         //for Admin
         public function example3()
         {
-            // get enable true data And sorted 
+            // get sorted data
             return $this->articleRepository->getAllForAdmin(); 
         }
 
@@ -169,7 +169,7 @@ In Controller
         public function example4()
         {
             $query = $this->articleRepository->getAllForAdminQuery();
-            // get enable true data And sorted
+            //  get sorted data
             return $query->where('title','=','test')->get(); 
         }
 ```
