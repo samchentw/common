@@ -19,8 +19,8 @@ $ php artisan vendor:publish --provider="Samchentw\Common\CommonServiceProvider"
 ## Feature
 Samchentw\Common\Repositories\Base\Repository  
 Samchentw\Common\Helpers\DictionaryHelper  
-Samchentw\Common\Traits\HasEnable  
-Samchentw\Common\Traits\HasSort  
+Samchentw\Common\Traits\Supports\HasEnable;
+Samchentw\Common\Traits\Supports\HasSort; 
 
 ## Generate repository
 ```sh
@@ -172,4 +172,54 @@ In Controller
             //  get sorted data
             return $query->where('title','=','test')->get(); 
         }
+```
+
+## DictionaryHelper
+use Samchentw\Common\Helpers\DictionaryHelper;
+```php
+    $datas = [
+                [
+                    "id" => 1,
+                    "name" => "sam",
+                    "job" => "developer"
+                ],
+                [
+                    "id" => 2,
+                    "name" => "john",
+                    "job" => "admin"
+                ],
+                [
+                    "id" => 3,
+                    "name" => "vivian",
+                    "job" => "user"
+                ]
+    ];
+
+    $result1 = DictionaryHelper::toDictionary($datas, 'name', 'job');
+    $result2 = DictionaryHelper::toDictionary($datas, 'id');
+
+    //output:
+     $result1 = [
+         "sam" => "developer",
+         "john" => "admin",
+         "vivian" => "user"
+     ];
+
+     $result2 = [
+         "sam" => [
+                "id" => 1,
+                "name" => "sam",
+                "job" => "developer"
+         ],
+         "john" => [
+                "id" => 2,
+                "name" => "john",
+                "job" => "admin"
+         ],
+         "vivian" => [
+                "id" => 3,
+                "name" => "vivian",
+                "job" => "user"
+         ]
+     ];
 ```
