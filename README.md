@@ -206,17 +206,17 @@ use Samchentw\Common\Helpers\DictionaryHelper;
      ];
 
      $result2 = [
-         "sam" => [
+         1 => [
                 "id" => 1,
                 "name" => "sam",
                 "job" => "developer"
          ],
-         "john" => [
+         2 => [
                 "id" => 2,
                 "name" => "john",
                 "job" => "admin"
          ],
-         "vivian" => [
+         3 => [
                 "id" => 3,
                 "name" => "vivian",
                 "job" => "user"
