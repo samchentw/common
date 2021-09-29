@@ -19,8 +19,8 @@ $ php artisan vendor:publish --provider="Samchentw\Common\CommonServiceProvider"
 ## Feature
 Samchentw\Common\Repositories\Base\Repository  
 Samchentw\Common\Helpers\DictionaryHelper  
-Samchentw\Common\Traits\Supports\HasEnable;
-Samchentw\Common\Traits\Supports\HasSort; 
+Samchentw\Common\Traits\Supports\HasEnable  
+Samchentw\Common\Traits\Supports\HasSort  
 
 ## Generate repository
 ```sh
