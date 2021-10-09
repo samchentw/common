@@ -2,6 +2,7 @@
 
 namespace Samchentw\Common;
 
+use Illuminate\Console\Command;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
 use Samchentw\Common\Console\Commands;
@@ -98,7 +99,8 @@ class CommonServiceProvider extends ServiceProvider
         $this->commands([
             Commands\MakeRepositoryCommand::class,
             Commands\MakeHelperCommand::class,
-            Commands\MakeServiceCommand::class
+            Commands\MakeServiceCommand::class,
+            Commands\RouterListCommand::class,
         ]);
     }
 }

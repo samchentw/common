@@ -1,7 +1,8 @@
 # Common
 1.repository pattern  
 2.quickly make repository,service and helper  
-3.simple dictionary type
+3.simple dictionary type  
+4.make simple router list  
 ## Installation
 `composer require samchentw/common`
 
@@ -217,4 +218,38 @@ use Samchentw\Common\Helpers\DictionaryHelper;
                 "job" => "user"
          ]
      ];
+```
+
+## Make Router List
+```sh
+$ php artisan output:router-list
+```
+
+url:  http://127.0.0.1:8000/router-list
+
+show method setting in config/common.php.
+
+For Example:  
+```php
+    // config/common.php 
+    return [
+
+        "model_sort" => env('MODEL_SORT', 'asc'),
+
+        /**
+         *  If you just want to show GET method.
+         *  Run:
+         *  php artisan optimize
+         *  php artisan output:router-list
+         **/
+        "router-list-methods" => [
+            "GET",
+            // "HEAD",
+            // "POST",
+            // "PUT",
+            // "HEAD",
+            // "PATCH",
+            // "DELETE"
+        ]
+    ];
 ```

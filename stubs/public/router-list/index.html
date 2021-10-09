@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Router List</title>
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+
+</head>
+
+
+<body x-data="data()">
+    <h3>Router List</h3>
+    <div>
+        Search: <input type="text" x-model="input">
+    </div><br>
+    <table>
+        <tr>
+            <th>No</th>
+            <th>Method</th>
+            <th>Controller</th>
+            <th>Url</th>
+            <th>Name</th>
+        </tr>
+        <template x-for="(router,index) in routers">
+            <tr>
+                <td> <span x-text="index+1"></span> </td>
+                <td> <span x-text="router.method"></span> </td>
+                <td> <span x-text="router.controller"></span> </td>
+                <td> <span x-text="router.url"></span> </td>
+                <td> <span x-text="router.name"></span> </td>
+            </tr>
+        </template>
+    </table>
+</body>
+
+</html>
+<script>
+    function data() {
+        return {
+            routers: [],
+            allData: [],
+            input: "",
+            init() {
+                fetch('/router-list/router-list.json').then(x => {
+                    return x.json();
+                }).then(x => {
+                    this.routers = x;
+                    this.allData = x;
+                })
+
+                this.$watch('input', (val) => {
+                    this.routers = this.allData.filter(x => {
+                        return x.controller.includes(val) ||
+                            x.url.includes(val) ||
+                            x.name.includes(val) ||
+                            x.method.includes(val);
+                    })
+                })
+            }
+        }
+    }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.4.2/cdn.js"></script>
+<!-- <script src="/router-list/js/alpinejs.min.js"></script> -->

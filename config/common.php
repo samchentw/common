@@ -8,4 +8,18 @@ return [
      * desc：由大至小排序
      */
     "model_sort" => env('MODEL_SORT','asc'),
+
+    /**
+     * 產生router-list用
+     * 指令：php artisan output:router-list
+     */
+    "router-list-methods" => [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "HEAD",
+        "PATCH",
+        "DELETE"
+    ]
 ];
