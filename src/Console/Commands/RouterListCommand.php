@@ -70,7 +70,7 @@ class RouterListCommand extends Command
                 $result->push([
                     'controller' => $conName,
                     'url' => $url,
-                    'name' => $name,
+                    'name' => $name ? $name : '',
                     'method' => $method
                 ]);
             }
