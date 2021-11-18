@@ -45,12 +45,11 @@ class RouterListCommand extends Command
      */
     public function handle()
     {
-        $config = config('common.router-list-methods', [
+        $config = config('common.router_list_methods', [
             "GET",
             "HEAD",
             "POST",
             "PUT",
-            "HEAD",
             "PATCH",
             "DELETE"
         ]);

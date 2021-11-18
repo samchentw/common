@@ -13,12 +13,11 @@ return [
      * 產生router-list用
      * 指令：php artisan output:router-list
      */
-    "router-list-methods" => [
+    "router_list_methods" => [
         "GET",
         "HEAD",
         "POST",
         "PUT",
-        "HEAD",
         "PATCH",
         "DELETE"
     ]
