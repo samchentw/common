@@ -248,12 +248,11 @@ For Example:
          *  php artisan optimize
          *  php artisan output:router-list
          **/
-        "router-list-methods" => [
+        "router_list_methods" => [
             "GET",
             // "HEAD",
             // "POST",
             // "PUT",
-            // "HEAD",
             // "PATCH",
             // "DELETE"
         ]
