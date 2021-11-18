@@ -168,6 +168,12 @@ In Controller
             //  get sorted data
             return $query->where('title','=','test')->get(); 
         }
+        
+        //else...
+        public function example5()
+        {
+            return Article::whereIn('id',[1,2,3,4,5])->orderBy('name')->sortByConfig()->get()
+        }
 ```
 
 ## DictionaryHelper
