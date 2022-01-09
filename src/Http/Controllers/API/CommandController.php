@@ -74,6 +74,21 @@ class CommandController extends Controller
 
     /**
      * @group CommandController(指令)
+     * optimize
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function optimize()
+    {
+        Artisan::call('optimize');
+        return response()->json([
+            'result' => true
+        ]);
+    }
+
+    /**
+     * @group CommandController(指令)
      * migrate
      *
      * @param  \Illuminate\Http\Request  $request

@@ -2,9 +2,6 @@
 
 namespace Samchentw\Common\Helpers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Str;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 
 class AuthHelper

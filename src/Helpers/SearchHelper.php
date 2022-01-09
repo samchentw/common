@@ -2,7 +2,6 @@
 
 namespace Samchentw\Common\Helpers;
 
-use Illuminate\Support\Traits\Macroable;
 use Illuminate\Http\Request;
 
 class SearchHelper

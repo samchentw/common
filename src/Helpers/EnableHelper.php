@@ -2,10 +2,6 @@
 
 namespace Samchentw\Common\Helpers;
 
-use Illuminate\Support\Traits\Macroable;
-use Illuminate\Http\Request;
-use Illuminate\Database\Schema\Blueprint;
-
 class EnableHelper
 {
   /**

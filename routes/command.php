@@ -8,25 +8,30 @@ use Illuminate\Support\Facades\File;
 use Samchentw\Common\Http\Controllers\API\CommandController;
 
 
+if (config('app.env') == 'local') {
+    Route::prefix('command')->name('command.')->middleware(['api'])->group(function () {
 
-Route::prefix('command')->name('command.')->middleware(['api'])->group(function () {
-
-    //reset file Storage link api
-    Route::get('/storage-link', [CommandController::class, 'storageLink']);
-
-
-    //clear cache
-    Route::get('/clear-cache', [CommandController::class, 'clearCache']);
+        //reset file Storage link api
+        Route::get('/storage-link', [CommandController::class, 'storageLink']);
 
 
-    //generate key
-    Route::get('/generate-key', [CommandController::class, 'generateKey']);
+        //clear cache
+        Route::get('/clear-cache', [CommandController::class, 'clearCache']);
 
 
-    //run seed
-    Route::get('/db-seed', [CommandController::class, 'dbSeed']);
+        //generate key
+        Route::get('/generate-key', [CommandController::class, 'generateKey']);
 
 
-    //run migrate
-    Route::get('/migrate', [CommandController::class, 'migrate']);
-});
+        //run seed
+        Route::get('/db-seed', [CommandController::class, 'dbSeed']);
+
+
+        //run migrate
+        Route::get('/migrate', [CommandController::class, 'migrate']);
+
+
+        //run optimize
+        Route::get('/optimize', [CommandController::class, 'optimize']);
+    });
+}
