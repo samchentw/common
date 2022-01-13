@@ -1,4 +1,5 @@
 # Common
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/samchentw/common.svg?style=flat-square)](https://packagist.org/packages/samchentw/common)
 [![tests](https://github.com/samchentw/common/actions/workflows/tests.yml/badge.svg)](https://github.com/samchentw/common/actions/workflows/tests.yml)  
 1.repository pattern  
 2.quickly make repository,service and helper  
