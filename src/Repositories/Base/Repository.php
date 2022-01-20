@@ -72,7 +72,7 @@ abstract class Repository
     /**
      * 刪除
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
         return $this->model->destroy($id);
     }
@@ -156,5 +156,23 @@ abstract class Repository
         }
 
         return $query->get();
+    }
+
+    /**
+     * 以$fillable參數新增model
+     */
+    public function createWithFillable(array $input)
+    {
+        $body = collect($input)->only($this->getFillable())->all();
+        return $this->create($body);
+    }
+
+    /**
+     * 以$fillable參數修改model
+     */
+    public function updateWithFillable(array $input, $id)
+    {
+        $body = collect($input)->only($this->getFillable())->all();
+        return $this->update($body, $id);
     }
 }
