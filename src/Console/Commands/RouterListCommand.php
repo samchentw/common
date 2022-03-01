@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Filesystem\Filesystem;
-use Symfony\Component\Process\Process;
+use Illuminate\Support\Facades\Route;
 
 /**
  * Url 與controller 對照表
@@ -54,7 +54,7 @@ class RouterListCommand extends Command
             "DELETE"
         ]);
 
-        $routeList = \Route::getRoutes();
+        $routeList = Route::getRoutes();
         $list = $routeList->getRoutesByMethod();
         $methods = collect($list)->keys()->intersect($config)->all();
         $result = collect([]);
