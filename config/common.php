@@ -20,5 +20,7 @@ return [
         "PUT",
         "PATCH",
         "DELETE"
-    ]
+    ],
+
+    "generate_path" => resource_path('js/API')
 ];

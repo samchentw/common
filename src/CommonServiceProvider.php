@@ -101,7 +101,7 @@ class CommonServiceProvider extends ServiceProvider
             Commands\MakeHelperCommand::class,
             Commands\MakeServiceCommand::class,
             Commands\RouterListCommand::class,
-            // Commands\ApiMakerCommand::class,
+            Commands\ClientCodeGenerator::class,
         ]);
     }
 }
