@@ -126,12 +126,12 @@ class ClientCodeGenerator extends Command
                     $input['document']
                 );
             }
-            $fileName = "/${key}.js";
+            $fileName = "/{$key}.js";
             $controllerPath = $items[0]['controller'];
             $fileContent = "/**
 * 此為程式碼產生器生產請勿修改
-* BackendFilePath: ${controllerPath}
-* FileName: ${fileName}
+* BackendFilePath: {$controllerPath}
+* FileName: {$fileName}
 * 
 * 說明：
 * @bodyParam 為物件data參數
@@ -140,7 +140,7 @@ class ClientCodeGenerator extends Command
 import axios from 'axios';
 
 export default {
-    ${jsMethod}
+    {$jsMethod}
 }
             ";
 
@@ -164,23 +164,23 @@ export default {
         $newUrl = Str::replace("{", "\${", $url);
         switch ($method) {
             case "GET":
-                $methodCase = "return axios.${methodDown}(`${newUrl}`, { params: query });";
+                $methodCase = "return axios.{$methodDown}(`{$newUrl}`, { params: query });";
                 break;
             case "POST":
-                $methodCase = "return axios.${methodDown}(`${newUrl}`, data, { params: query });";
+                $methodCase = "return axios.{$methodDown}(`{$newUrl}`, data, { params: query });";
                 break;
             case "PUT":
-                $methodCase = "return axios.${methodDown}(`${newUrl}`, data, { params: query });";
+                $methodCase = "return axios.{$methodDown}(`{$newUrl}`, data, { params: query });";
                 break;
             case "DELETE":
-                $methodCase = "return axios.${methodDown}(`${newUrl}`, { params: query });";
+                $methodCase = "return axios.{$methodDown}(`{$newUrl}`, { params: query });";
                 break;
         }
 
         return "
-    ${doc}
-    ${methodName}(${paramStr}) {
-        ${methodCase}
+    {$doc}
+    {$methodName}({$paramStr}) {
+        {$methodCase}
     },
         ";
     }
